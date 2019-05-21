@@ -27,5 +27,6 @@
     height: 100%;
     background: url('~@/assets/images/bg1.jpg') no-repeat;
     background-size: cover;
+    overflow: hidden;
   }
 </style>

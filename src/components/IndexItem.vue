@@ -345,9 +345,9 @@
               if(i>=7){
                 clearInterval(timer);
                 timer=null;
-              };
+              }
               i++;
-            },150);
+            },150)
           })(ii)
           
         }
@@ -531,7 +531,7 @@
   }
   .load .top, .load .bottom .fan1 img,.load .bottom .fan2,.load .bottom .fan3,.load .bottom .fan4,.load .bottom .fan5,.load .bottom .fan6,.load .bottom .fan7,.load .bottom .fan8,.load .bottom .canvas3,.load .bottom .canvas4 canvas{transform:scale(0);}
   .showAll{
-    width:100%;position:absolute;top:-20px;transition:0.8s; 
+    width:2400px;position:absolute;top:-20px;transition:0.8s; 
     .light {position:absolute;width:1800px;height:200px;top:340px;left:560px;z-index:-1;opacity:1;}
     .light.showlight{animation:0.5s showlight;opacity:1}
     .light .row{float:left;width:520px;height:2px;position:relative;box-shadow:0px 0px 6px 0px #25f7fc;}
@@ -541,7 +541,7 @@
     .light .row2{transform:rotateZ(21deg);}
     .light .row3{transform:rotateZ(-21deg);}
   }
-  .page{float:left;transition:0.6s;z-index: 10;}
+  .page{float:left;transition:0.6s;z-index: 10;margin-left: 60px;margin-top: 60px;}
   .page1{transform:translateY(200px);}
   .show{transform:translateY(50px) rotateX(45deg) rotateY(-18deg) translateZ(300px);}
   .animate{
@@ -559,17 +559,24 @@
   .show .caret3{opacity:1}
 
   .meddile{
-    height:240px;width:332px;position:absolute;overflow:hidden;top:140px;left:94px;z-index:100;
+    height:240px;width:332px;position:absolute;top:140px;left:94px;z-index:100;
     .pic{width:240px;height:240px;position:absolute;top:0;left:46px;}
     .play{width:76px;height:76px;position:absolute;top:82px;left:128px;background:url('~@/assets/images/play.png') no-repeat;}
+    .cen{position: absolute; height:240px;width:332px; top:0; left: 0 }
     .center1{transform:scale(0);width:272px;height:86px;color:#fff;position:absolute;top:77px;text-align:center;left:30px;transform-origin:center center;background:url('~@/assets/images/textbj.png') no-repeat left center;transition:0.4s all linear;}
     .center1 h4{line-height:20px;padding:20px 0 10px 0;margin:0;font-weight:normal;font-size:18px;}
     .center1 p{font-size:16px;}
-    .side1{width:66px;height:50px;position:absolute;top:95px;left:-66px;background:url('~@/assets/images/bian.png') no-repeat left center;transition:0.3s all linear;}
-    .side2{width:66px;height:50px;position:absolute;top:95px;right:-66px;background:url('~@/assets/images/bian.png') no-repeat right center;transition:0.3s all linear;}
+    .side1{width:64px;height:50px;overflow: hidden; position:absolute;top:95px;left:0px;background:url('~@/assets/images/bian.png') no-repeat left center;transition:0.3s all linear;z-index: 100;}
+    .side2{width:64px;height:50px;position:absolute;overflow: hidden; top:95px;right:0px;background:url('~@/assets/images/bian.png') no-repeat right center;transition:0.3s all linear;}
     .pic canvas{position:absolute;top:0;left:0;}
   }
-
+  .hide {
+    .meddile{
+      .center1{
+        transform:scale(1);
+      }
+    }
+  }
   .load .meddile .pic canvas:nth-of-type(1){transform:rotate(0deg);animation:rotate1 1s linear;}
   .load .meddile .pic canvas:nth-of-type(2){transform:rotate(0deg);animation:rotate1 1.2s linear;}
   .bottom{
