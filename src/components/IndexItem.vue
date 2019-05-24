@@ -188,6 +188,100 @@
         </div>
       </div>
     </div>
+    <div class="page1 page">
+      <div class="animate load animate1 " :class="showFlag?'show': 'hide'" @click.stop="changeStatus">
+        <div class="line">
+          <canvas class="line1" ref="line1" width="2px" height="520px">
+          </canvas>
+        </div>
+        <div class="top">
+          <div class="caret1">
+          </div>
+          <div class="caret2">
+          </div>
+          <div class="caret3">
+            <canvas class="canvas1" width="250px" height="250px">
+            </canvas>
+          </div>
+          
+        </div>
+        <div class="meddile">
+          <div class="pic">
+            <canvas class="canvas2_1" width="240px" height="240px" >
+            </canvas>
+            <canvas class="canvas2_2" width="240px" height="240px" >
+            </canvas>
+            <canvas class="canvas2_3" width="240px" height="240px" >
+            </canvas>
+            <canvas class="canvas2_4" width="240px" height="240px" >
+            </canvas>
+            <canvas class="canvas2_5" width="240px" height="240px" >
+            </canvas>
+            <canvas class="canvas2_6" width="240px" height="240px" >
+            </canvas>
+          </div>
+          
+          <div class="play">
+          </div>
+          <div class="cen">
+            <div class="center1">
+              <h4>100度电商网站</h4>
+              <p>2016.4</p>
+            </div>
+            <div class="side1">
+            </div>
+            <div class="side2">
+            </div>
+          </div>
+        </div>
+        <div class="bottom ">
+          <div class="fan1">
+            <img src="@/assets/images/fan1.png">
+            <img src="@/assets/images/fan1-1.png">
+          </div>
+          <div class="fan2">
+          </div>
+          <div class="fan3">
+            <img src="~@/assets/images/fan3-1.png">
+          </div>
+          
+          <div class="fan4">
+          </div>
+          <div class="fan5">
+          </div>
+          <div class="fan6">
+          </div>
+          <div class="canvas3">
+            <canvas class="canvas3_3" width="520px" height="520px">
+            </canvas>
+          </div>
+          <div class="fan7">
+            <span>2013</span>
+            <span>2014</span>
+            <span>2015</span>
+            <span>2016</span>
+            <span>2017</span>
+          </div>
+          <div class="fan8">
+            <p>100度电商网站</p>
+          </div>
+          <div class="canvas4">
+            <img class="img1s" src="~@/assets/images/xpan2-1s.png" style="display:none"/>
+            <img class="img2s" src="~@/assets/images/xpan2-2s.png" style="display:none"/>
+            <img class="img3s" src="~@/assets/images/xpan2-3s.png" style="display:none"/>
+            <img class="img4s" src="~@/assets/images/xpan2-4s.png" style="display:none"/>
+            <canvas class="canvas4_4" width="57px" height="96px">
+            </canvas>
+            <canvas class="canvas5" width="57px" height="72px">
+            </canvas>
+            <canvas class="canvas6" width="57px" height="77px">
+            </canvas>
+            <canvas class="canvas7" width="57px" height="93px">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -244,88 +338,102 @@
       drawCanvasCircle() {
         var oc2_1s=document.getElementsByClassName("canvas2_1");
         for (var ii = 0; ii< oc2_1s.length; ii++ ) {
-          var oGc2_1 = oc2_1s[ii].getContext("2d");
-          var x=120;
-          var y=120;
-          //1
-          var r=116;
-          oGc2_1.beginPath();
-          oGc2_1.lineWidth=8;
-          oGc2_1.globalAlpha=0.9;
-          oGc2_1.strokeStyle="#00bebe";
-          oGc2_1.arc(x,y,r,-110*Math.PI/180,-70*Math.PI/180,false);
-          oGc2_1.stroke();
-          oGc2_1.beginPath();
-          oGc2_1.arc(x,y,r,10*Math.PI/180,50*Math.PI/180,false);
-          oGc2_1.stroke();
-          oGc2_1.beginPath();
-          oGc2_1.arc(x,y,r,130*Math.PI/180,170*Math.PI/180,false);
-          oGc2_1.stroke();
+          //(() => {})()
+          (() => {
+            var oGc2_1 = oc2_1s[ii].getContext("2d");
+            var x=120;
+            var y=120;
+            //1
+            var r=116;
+            oGc2_1.beginPath();
+            oGc2_1.lineWidth=8;
+            oGc2_1.globalAlpha=0.9;
+            oGc2_1.strokeStyle="#00bebe";
+            oGc2_1.arc(x,y,r,-110*Math.PI/180,-70*Math.PI/180,false);
+            oGc2_1.stroke();
+            oGc2_1.beginPath();
+            oGc2_1.arc(x,y,r,10*Math.PI/180,50*Math.PI/180,false);
+            oGc2_1.stroke();
+            oGc2_1.beginPath();
+            oGc2_1.arc(x,y,r,130*Math.PI/180,170*Math.PI/180,false);
+            oGc2_1.stroke();
+          })();
           
+          (() => {
+            //2
+            var oc2_2=document.getElementsByClassName("canvas2_2")[ii];
+            var oGc2_2=oc2_2.getContext("2d");
+            
+            var x=120;
+            var y=120;
+            var r=113;
+            oGc2_2.strokeStyle="#00bebe";
+            oGc2_2.lineWidth=2;
+            oGc2_2.beginPath();
+            oGc2_2.arc(x,y,r,-60*Math.PI/180,-0*Math.PI/180,false);
+            oGc2_2.stroke();
+            oGc2_2.beginPath();
+            oGc2_2.arc(x,y,r,60*Math.PI/180,120*Math.PI/180,false);
+            oGc2_2.stroke();
+            oGc2_2.beginPath();
+            oGc2_2.arc(x,y,r,180*Math.PI/180,240*Math.PI/180,false);
+            oGc2_2.stroke();
+          })();
           
-          //2
-          var oc2_2=document.getElementsByClassName("canvas2_2")[ii];
-          var oGc2_2=oc2_2.getContext("2d");
+          (() => {
+            //3
+            var oc2_3=document.getElementsByClassName("canvas2_3")[ii];
+            var oGc2_3=oc2_3.getContext("2d");
+            var x=120;
+            var y=120;
+            oGc2_3.beginPath();
+            
+            oGc2_3.globalAlpha=0.5;
+            var r=107;
+            oGc2_3.lineWidth=6;
+            oGc2_3.strokeStyle="#88c0c0";
+            oGc2_3.arc(x,y,r,0*Math.PI/180,-360*Math.PI/180,false);
+            oGc2_3.stroke();
+          })();
           
-          var x=120;
-          var y=120;
-          r=113;
-          oGc2_2.strokeStyle="#00bebe";
-          oGc2_2.lineWidth=2;
-          oGc2_2.beginPath();
-          oGc2_2.arc(x,y,r,-60*Math.PI/180,-0*Math.PI/180,false);
-          oGc2_2.stroke();
-          oGc2_2.beginPath();
-          oGc2_2.arc(x,y,r,60*Math.PI/180,120*Math.PI/180,false);
-          oGc2_2.stroke();
-          oGc2_2.beginPath();
-          oGc2_2.arc(x,y,r,180*Math.PI/180,240*Math.PI/180,false);
-          oGc2_2.stroke();
-          //3
-          var oc2_3=document.getElementsByClassName("canvas2_3")[ii];
-          var oGc2_3=oc2_3.getContext("2d");
-          var x=120;
-          var y=120;
-          oGc2_3.beginPath();
-          
-          oGc2_3.globalAlpha=0.5;
-          r=107;
-          oGc2_3.lineWidth=6;
-          oGc2_3.strokeStyle="#88c0c0";
-          oGc2_3.arc(x,y,r,0*Math.PI/180,-360*Math.PI/180,false);
-          oGc2_3.stroke();
-          
-          //4
-          var oc2_4=document.getElementsByClassName("canvas2_4")[ii];
-          var oGc2_4=oc2_4.getContext("2d");
-          var x=120;
-          var y=120;
-          oGc2_4.beginPath();
-          r=101;
-          oGc2_4.lineWidth=3;
-          oGc2_4.strokeStyle="#88c0c0";
-          oGc2_4.globalAlpha=0.8;
-          oGc2_4.arc(x,y,r,0*Math.PI/180,-360*Math.PI/180,false);
-          oGc2_4.stroke();
-          //5
-          var oc2_5=document.getElementsByClassName("canvas2_5")[ii];
-          var oGc2_5=oc2_5.getContext("2d");
-          var x=120;
-          var y=120;
-          oGc2_5.lineWidth=3;
-          oGc2_5.strokeStyle="#00bebe";
-          r=96;
-          for(var i=0;i<180;i++){
-            oGc2_5.beginPath();
-            oGc2_5.arc(x,y,r,(2*i)*Math.PI/180,(2*i+1)*Math.PI/180,false);
-            oGc2_5.stroke();
-          }
+          (() => {
+            //4
+            var oc2_4=document.getElementsByClassName("canvas2_4")[ii];
+            var oGc2_4=oc2_4.getContext("2d");
+            var x=120;
+            var y=120;
+            oGc2_4.beginPath();
+            var r=101;
+            oGc2_4.lineWidth=3;
+            oGc2_4.strokeStyle="#88c0c0";
+            oGc2_4.globalAlpha=0.8;
+            oGc2_4.arc(x,y,r,0*Math.PI/180,-360*Math.PI/180,false);
+            oGc2_4.stroke();
+          })();
+           
+          (() => {
+            //5
+            var oc2_5=document.getElementsByClassName("canvas2_5")[ii];
+            var oGc2_5=oc2_5.getContext("2d");
+            var x=120;
+            var y=120;
+            oGc2_5.lineWidth=3;
+            oGc2_5.strokeStyle="#00bebe";
+            var r=96;
+            for(var i=0;i<180;i++){
+              oGc2_5.beginPath();
+              oGc2_5.arc(x,y,r,(2*i)*Math.PI/180,(2*i+1)*Math.PI/180,false);
+              oGc2_5.stroke();
+            }
+          })();
+
           //6
           (()=> {
             var oc2_6=document.getElementsByClassName("canvas2_6")[ii];
             var oGc2_6=oc2_6.getContext("2d");
             var x=120;
             var y=120;
+            var r=90;
             var obj=oGc2_6.createLinearGradient(0,0,240,240);
             obj.addColorStop(0,"#88c0c0");
             obj.addColorStop(1,"#00bebe");
@@ -478,50 +586,50 @@
 
 </script>
 <style lang='less' scoped>
-  @-webkit-keyframes move1{
+  @keyframes move1{
     0%{transform:rotateZ(0deg)}
     50%{transform:rotateZ(180deg)}
     100%{transform:rotateZ(360deg)}
   }
-  @-webkit-keyframes hide1{
+  @keyframes hide1{
     0%{transform:scale(1)}
     100%{transform:scale(0)}
   }
-  @-webkit-keyframes showTop{
+  @keyframes showTop{
     0%{transform:scale(0) translateZ(0px) }
     100%{transform:scale(1) translateZ(180px)}
   }
-  @-webkit-keyframes hideTop{
+  @keyframes hideTop{
     0%{transform:scale(1) translateZ(180px)}
     100%{transform:scale(0) translateZ(0px) }
   }
-  @-webkit-keyframes showBottom{
+  @keyframes showBottom{
     0%{transform:translateZ(0px) }
     100%{transform:translateZ(-180px)}
   }
-  @-webkit-keyframes hideBottom{
+  @keyframes hideBottom{
     0%{transform:translateZ(-180px)}
     100%{transform:translateZ(0px) }
   }
-  @-webkit-keyframes show1{
+  @keyframes show1{
     0%{transform:scale(0)}
     100%{transform:scale(1)}
   }
-  @-webkit-keyframes rotate1{
+  @keyframes rotate1{
     0%{transform:rotate(0deg)}
     25%{transform:rotate(60deg)}
     50%{transform:rotate(120deg)}
     75%{transform:rotate(60deg)}
     100%{transform:rotate(0deg)}
   }
-  @-webkit-keyframes rotate2{
+  @keyframes rotate2{
     0%{transform:rotate(0deg)}
     25%{transform:rotate(-60deg)}
     50%{transform:rotate(-120deg)}
     75%{transform:rotate(-60deg)}
     100%{transform:rotate(0deg)}
   }
-  @-webkit-keyframes showlight{
+  @keyframes showlight{
     0%{opacity:0.3}
     20%{opacity:1;}
     50%{opacity:0.2;}
@@ -541,7 +649,7 @@
     .light .row2{transform:rotateZ(21deg);}
     .light .row3{transform:rotateZ(-21deg);}
   }
-  .page{float:left;transition:0.6s;z-index: 10;margin-left: 60px;margin-top: 60px;}
+  .page{float:left;transition:0.6s;z-index: 10;margin-left: 60px;margin-top: 0px;}
   .page1{transform:translateY(200px);}
   .show{transform:translateY(50px) rotateX(45deg) rotateY(-18deg) translateZ(300px);}
   .animate{
