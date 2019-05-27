@@ -1,283 +1,99 @@
 <template>
-  <div class="showAll">
-    <div class="page1 page">
-      <div class="animate load animate1 " :class="showFlag?'show': 'hide'" @click.stop="changeStatus">
-        <div class="line">
-          <canvas class="line1" ref="line1" width="2px" height="520px">
-          </canvas>
-        </div>
-        <div class="top">
-          <div class="caret1">
-          </div>
-          <div class="caret2">
-          </div>
-          <div class="caret3">
-            <canvas class="canvas1" width="250px" height="250px">
-            </canvas>
-          </div>
-          
-        </div>
-        <div class="meddile">
-          <div class="pic">
-            <canvas class="canvas2_1" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_2" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_3" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_4" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_5" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_6" width="240px" height="240px" >
-            </canvas>
-          </div>
-          
-          <div class="play">
-          </div>
-          <div class="cen">
-            <div class="center1">
-              <h4>100度电商网站</h4>
-              <p>2016.4</p>
+  <div class="bg1" ref='bg1' style="width: 100%">
+    <div class="move-wrap" ref='movebg' @mousedown="move">
+      <div class="showAll">
+        <div class="page1 page" v-for="(item, index) in itemsData" :key= "index">
+          <div class="animate load animate1 " :class="item.open?'show': 'hide'" @click.stop="changeStatus(item, index)">
+            <div class="line">
+              <canvas class="line1" ref="line1" width="2px" height="520px">
+              </canvas>
             </div>
-            <div class="side1">
+            <div class="top">
+              <div class="caret1">
+              </div>
+              <div class="caret2">
+              </div>
+              <div class="caret3">
+                <canvas class="canvas1" width="250px" height="250px">
+                </canvas>
+              </div>
+              
             </div>
-            <div class="side2">
+            <div class="meddile">
+              <div class="pic">
+                <canvas class="canvas2_1" width="240px" height="240px" >
+                </canvas>
+                <canvas class="canvas2_2" width="240px" height="240px" >
+                </canvas>
+                <canvas class="canvas2_3" width="240px" height="240px" >
+                </canvas>
+                <canvas class="canvas2_4" width="240px" height="240px" >
+                </canvas>
+                <canvas class="canvas2_5" width="240px" height="240px" >
+                </canvas>
+                <canvas class="canvas2_6" width="240px" height="240px" >
+                </canvas>
+              </div>
+              
+              <div class="play">
+              </div>
+              <div class="cen">
+                <div class="center1">
+                  <h4>{{item.name}}</h4>
+                  <p>{{item.time}}</p>
+                </div>
+                <div class="side1">
+                </div>
+                <div class="side2">
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="bottom ">
-          <div class="fan1">
-            <img src="@/assets/images/fan1.png">
-            <img src="@/assets/images/fan1-1.png">
-          </div>
-          <div class="fan2">
-          </div>
-          <div class="fan3">
-            <img src="~@/assets/images/fan3-1.png">
-          </div>
-          
-          <div class="fan4">
-          </div>
-          <div class="fan5">
-          </div>
-          <div class="fan6">
-          </div>
-          <div class="canvas3">
-            <canvas class="canvas3_3" width="520px" height="520px">
-            </canvas>
-          </div>
-          <div class="fan7">
-            <span>2013</span>
-            <span>2014</span>
-            <span>2015</span>
-            <span>2016</span>
-            <span>2017</span>
-          </div>
-          <div class="fan8">
-            <p>100度电商网站</p>
-          </div>
-          <div class="canvas4">
-            <img class="img1s" src="~@/assets/images/xpan1-1s.png" style="display:none"/>
-            <img class="img2s" src="~@/assets/images/xpan1-2s.png" style="display:none"/>
-            <img class="img3s" src="~@/assets/images/xpan1-3s.png" style="display:none"/>
-            <img class="img4s" src="~@/assets/images/xpan1-4s.png" style="display:none"/>
-            <canvas class="canvas4_4" width="57px" height="96px">
-            </canvas>
-            <canvas class="canvas5" width="57px" height="72px">
-            </canvas>
-            <canvas class="canvas6" width="57px" height="77px">
-            </canvas>
-            <canvas class="canvas7" width="57px" height="93px">
-            </canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="page1 page">
-      <div class="animate load animate1 " :class="showFlag?'show': 'hide'" @click.stop="changeStatus">
-        <div class="line">
-          <canvas class="line1" ref="line1" width="2px" height="520px">
-          </canvas>
-        </div>
-        <div class="top">
-          <div class="caret1">
-          </div>
-          <div class="caret2">
-          </div>
-          <div class="caret3">
-            <canvas class="canvas1" width="250px" height="250px">
-            </canvas>
-          </div>
-          
-        </div>
-        <div class="meddile">
-          <div class="pic">
-            <canvas class="canvas2_1" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_2" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_3" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_4" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_5" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_6" width="240px" height="240px" >
-            </canvas>
-          </div>
-          
-          <div class="play">
-          </div>
-          <div class="cen">
-            <div class="center1">
-              <h4>100度电商网站</h4>
-              <p>2016.4</p>
+            <div class="bottom ">
+              <div class="fan1">
+                <img src="@/assets/images/fan1.png">
+                <img src="@/assets/images/fan1-1.png">
+              </div>
+              <div class="fan2">
+              </div>
+              <div class="fan3">
+                <img src="~@/assets/images/fan3-1.png">
+              </div>
+              
+              <div class="fan4">
+              </div>
+              <div class="fan5">
+              </div>
+              <div class="fan6">
+              </div>
+              <div class="canvas3">
+                <canvas class="canvas3_3" width="520px" height="520px">
+                </canvas>
+              </div>
+              <div class="fan7">
+                <span>2013</span>
+                <span>2014</span>
+                <span>2015</span>
+                <span>2016</span>
+                <span>2017</span>
+              </div>
+              <div class="fan8">
+                <p>100度电商网站</p>
+              </div>
+              <div class="canvas4">
+                <img class="img1s" :src="item.pics[0]" style="display:none"/>
+                <img class="img2s" :src="item.pics[1]" style="display:none"/>
+                <img class="img3s" :src="item.pics[2]" style="display:none"/>
+                <img class="img4s" :src="item.pics[3]" style="display:none"/>
+                <canvas class="canvas4_4" width="57px" height="96px">
+                </canvas>
+                <canvas class="canvas5" width="57px" height="72px">
+                </canvas>
+                <canvas class="canvas6" width="57px" height="77px">
+                </canvas>
+                <canvas class="canvas7" width="57px" height="93px">
+                </canvas>
+              </div>
             </div>
-            <div class="side1">
-            </div>
-            <div class="side2">
-            </div>
-          </div>
-        </div>
-        <div class="bottom ">
-          <div class="fan1">
-            <img src="@/assets/images/fan1.png">
-            <img src="@/assets/images/fan1-1.png">
-          </div>
-          <div class="fan2">
-          </div>
-          <div class="fan3">
-            <img src="~@/assets/images/fan3-1.png">
-          </div>
-          
-          <div class="fan4">
-          </div>
-          <div class="fan5">
-          </div>
-          <div class="fan6">
-          </div>
-          <div class="canvas3">
-            <canvas class="canvas3_3" width="520px" height="520px">
-            </canvas>
-          </div>
-          <div class="fan7">
-            <span>2013</span>
-            <span>2014</span>
-            <span>2015</span>
-            <span>2016</span>
-            <span>2017</span>
-          </div>
-          <div class="fan8">
-            <p>100度电商网站</p>
-          </div>
-          <div class="canvas4">
-            <img class="img1s" src="~@/assets/images/xpan2-1s.png" style="display:none"/>
-            <img class="img2s" src="~@/assets/images/xpan2-2s.png" style="display:none"/>
-            <img class="img3s" src="~@/assets/images/xpan2-3s.png" style="display:none"/>
-            <img class="img4s" src="~@/assets/images/xpan2-4s.png" style="display:none"/>
-            <canvas class="canvas4_4" width="57px" height="96px">
-            </canvas>
-            <canvas class="canvas5" width="57px" height="72px">
-            </canvas>
-            <canvas class="canvas6" width="57px" height="77px">
-            </canvas>
-            <canvas class="canvas7" width="57px" height="93px">
-            </canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="page1 page">
-      <div class="animate load animate1 " :class="showFlag?'show': 'hide'" @click.stop="changeStatus">
-        <div class="line">
-          <canvas class="line1" ref="line1" width="2px" height="520px">
-          </canvas>
-        </div>
-        <div class="top">
-          <div class="caret1">
-          </div>
-          <div class="caret2">
-          </div>
-          <div class="caret3">
-            <canvas class="canvas1" width="250px" height="250px">
-            </canvas>
-          </div>
-          
-        </div>
-        <div class="meddile">
-          <div class="pic">
-            <canvas class="canvas2_1" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_2" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_3" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_4" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_5" width="240px" height="240px" >
-            </canvas>
-            <canvas class="canvas2_6" width="240px" height="240px" >
-            </canvas>
-          </div>
-          
-          <div class="play">
-          </div>
-          <div class="cen">
-            <div class="center1">
-              <h4>100度电商网站</h4>
-              <p>2016.4</p>
-            </div>
-            <div class="side1">
-            </div>
-            <div class="side2">
-            </div>
-          </div>
-        </div>
-        <div class="bottom ">
-          <div class="fan1">
-            <img src="@/assets/images/fan1.png">
-            <img src="@/assets/images/fan1-1.png">
-          </div>
-          <div class="fan2">
-          </div>
-          <div class="fan3">
-            <img src="~@/assets/images/fan3-1.png">
-          </div>
-          
-          <div class="fan4">
-          </div>
-          <div class="fan5">
-          </div>
-          <div class="fan6">
-          </div>
-          <div class="canvas3">
-            <canvas class="canvas3_3" width="520px" height="520px">
-            </canvas>
-          </div>
-          <div class="fan7">
-            <span>2013</span>
-            <span>2014</span>
-            <span>2015</span>
-            <span>2016</span>
-            <span>2017</span>
-          </div>
-          <div class="fan8">
-            <p>100度电商网站</p>
-          </div>
-          <div class="canvas4">
-            <img class="img1s" src="~@/assets/images/xpan2-1s.png" style="display:none"/>
-            <img class="img2s" src="~@/assets/images/xpan2-2s.png" style="display:none"/>
-            <img class="img3s" src="~@/assets/images/xpan2-3s.png" style="display:none"/>
-            <img class="img4s" src="~@/assets/images/xpan2-4s.png" style="display:none"/>
-            <canvas class="canvas4_4" width="57px" height="96px">
-            </canvas>
-            <canvas class="canvas5" width="57px" height="72px">
-            </canvas>
-            <canvas class="canvas6" width="57px" height="77px">
-            </canvas>
-            <canvas class="canvas7" width="57px" height="93px">
-            </canvas>
           </div>
         </div>
       </div>
@@ -286,19 +102,88 @@
 </template>
 
 <script>
-
+  import itemsData from '@/lib/item.js'
   export default {
     name:'',
     props:[''],
     data () {
       return {
         showFlag: false,
+        moveFlag: false,
+        left: 0,
+        itemsData: itemsData,
+        difallX: 300,
       };
     },
     methods: {
+      // 滑动
+      move(e){
+        if (this.moveFlag) return;
+        // let odiv = e.target;    //获取目标元素
+        let that = this;
+        let left = 0
+        //算出鼠标相对元素的位置
+        let disX = e.screenX;
+        let widthBg = document.documentElement.clientWidth || document.body.clientWidth;
+        let widthScroll = this.$refs.movebg.getBoundingClientRect().width || 2400;
+        let difallX = widthScroll - widthBg;
+        this.difallX = difallX
+        // let disY = e.clientY - odiv.offsetTop;
+        document.onmousemove = (e)=>{    //鼠标按下并移动的事件
+          //用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
+          that.moveFlag = true
+          left = e.screenX - disX;  
+          // let top = e.clientY - disY;
+          //绑定元素位置到positionX和positionY上面
+          // this.positionX = top;
+          // this.positionY = left;
+          //移动当前元素
+          
+          that.$refs.movebg.style.transition = '0s';
+          that.$refs.movebg.style.transform = `translate(${that.left + left}px, 0px)`;
+          
+        };
+        document.onmouseup = () => {
+          that.left = that.left + 3*left;
+          // console.log(that.left)
+          if (that.left > 0 ) {
+            that.left = 0
+          } else if (-that.left > difallX) {
+            that.left = -difallX
+          }
+          that.$refs.movebg.style.transition = '0.6s';
+          that.$refs.movebg.style.transform = `translate(${that.left}px, 0px)`;
+          document.onmousemove = null;
+          document.onmouseup = null;
+          setTimeout(() => {
+            that.moveFlag = false
+            // let index = parseInt(-that.left / difallX)
+            // that.itemsData.map((item, index1) => {
+            //   if(index !== index1) {
+            //     item.open = false
+            //   } else {
+            //     item.open = !item.open
+            //   }
+            // })
+          }, 600)
+        };
+      },
       // 改状态
-      changeStatus() {
-        this.showFlag = !this.showFlag
+      changeStatus(item, index) {
+        // 重置其他
+        this.itemsData.map((item, index1) => {
+          if(index !== index1) {
+            item.open = false
+          } 
+        })
+        // 切换状态
+        item.open = !item.open
+        if (index <= 2 ) {
+          this.left = -this.difallX * ((index+0) / this.itemsData.length)
+        } else {
+          this.left = -this.difallX * ((index+1) / this.itemsData.length)
+        }
+        this.$refs.movebg.style.transform = `translate(${this.left}px, 0px)`;
       },
       // 绘制一条细线
       drawLine() {
@@ -572,6 +457,7 @@
       }
     },
     mounted() {
+      // 绘制 canvas
       this.drawCanvas1();
       this.drawLine();
       this.drawCanvasCircle();
@@ -580,6 +466,14 @@
       this.drawCanvas5();
       this.drawCanvas6();
       this.drawCanvas7();
+      // 容器设置宽度
+      this.$refs.movebg.style.width =  this.itemsData.length * 560 + 60 + 'px';
+
+      // 计算滑动长度
+      let widthBg = document.documentElement.clientWidth || document.body.clientWidth;
+      let widthScroll = this.$refs.movebg.getBoundingClientRect().width || 2400;
+      let difallX = widthScroll - widthBg;
+      this.difallX = difallX
     },
 
   }
@@ -637,9 +531,33 @@
     90%{opacity:0.5;}
     100%{opacity:1;}
   }
+  .flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .bg1{
+    width: 100%;
+    height: 100%;
+    // background: url('~@/assets/images/bg1.jpg') no-repeat;
+    background: #666;
+    background-size: cover;
+    overflow: hidden;
+    .move-wrap{
+      transform: translate(0px, 0px);
+      transition: 0s;
+      height: 100%;
+    }
+  }
   .load .top, .load .bottom .fan1 img,.load .bottom .fan2,.load .bottom .fan3,.load .bottom .fan4,.load .bottom .fan5,.load .bottom .fan6,.load .bottom .fan7,.load .bottom .fan8,.load .bottom .canvas3,.load .bottom .canvas4 canvas{transform:scale(0);}
   .showAll{
-    width:2400px;position:absolute;top:-20px;transition:0.8s; 
+    .flex-row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    height: 100%;
+    top:-20px;transition:0.8s; 
     .light {position:absolute;width:1800px;height:200px;top:340px;left:560px;z-index:-1;opacity:1;}
     .light.showlight{animation:0.5s showlight;opacity:1}
     .light .row{float:left;width:520px;height:2px;position:relative;box-shadow:0px 0px 6px 0px #25f7fc;}
@@ -649,7 +567,10 @@
     .light .row2{transform:rotateZ(21deg);}
     .light .row3{transform:rotateZ(-21deg);}
   }
-  .page{float:left;transition:0.6s;z-index: 10;margin-left: 60px;margin-top: 0px;}
+  .page{
+    transition:0.6s;z-index: 10;margin-left: 60px;margin-top: 0px;
+    flex-shrink: 0;
+  }
   .page1{transform:translateY(200px);}
   .show{transform:translateY(50px) rotateX(45deg) rotateY(-18deg) translateZ(300px);}
   .animate{
